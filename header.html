@@ -1,0 +1,44 @@
+<!DOCTYPE HTML">
+<html>
+	<head>
+		<center>
+			<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+			<script src="sorttable.js"></script>
+			<style>
+				*{
+					box-sizing: border-box;
+				}
+			
+				/* Create two equal columns that floats next to each other */
+				.column {
+				  float: left;
+				  width: 50%;
+				  padding: 10px;
+				  height: 300px; /* Should be removed. Only for demonstration */
+				}
+				
+				/* Clear floats after the columns */
+				.row:after {
+				  content: "";
+				  display: table;
+				  clear: both;
+				}
+			</style>
+			<title>UNCC Golf Cart Rentals</title>
+			<h1>UNCC Golf Cart Rentals</h1>
+			<div class="topnav">
+			  <a href="index.php">Home</a>
+			  <a href="tables.php">Table List</a>
+			  <a href="views.php">View List</a>
+			  <a href="actions.php">Stored Procedures in Action</a>
+			</div>
+			
+			<?php 
+				if ( isset( $_POST["Create"] ) ) { 
+      				header( "Location: action.php" ); 
+      				exit; 
+    			}
+			?>
+		</center>
+	</head>
+</html>
