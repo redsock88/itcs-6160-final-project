@@ -68,8 +68,10 @@
 				<tr>
         			<th>StartDateTime</th>
         			<th>EndDateTime</th>
-        			<th>PaymentAmount</th>
-        			<th>Rating</th>
+        			<th>StartLocation</th>
+        			<th>EndLocation</th>
+        			<th>Passenger1</th>
+        			<th>Passenger2</th>
         			<th>Driver</th>
     			</tr>
     	   		<?php
@@ -80,8 +82,10 @@
     			<tr>
         			<td><?php echo $row ["startDateTime"]; ?></td>
         			<td><?php echo $row ["endDateTime"]; ?></td>
-        			<td><?php echo $row ["paymentAmount"]; ?></td>
-        			<td><?php echo $row ["rating"]; ?></td>
+        			<td><?php echo $row ["startLocation"]; ?></td>
+        			<td><?php echo $row ["endLocation"]; ?></td>
+        			<td><?php echo $row ["passenger1"]; ?></td>
+        			<td><?php echo $row ["passenger2"]; ?></td>
         			<td><?php echo $row ["driver"]; ?></td>
     			</tr>
     			<?php } ?>
