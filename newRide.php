@@ -70,14 +70,12 @@
     		     function add($startDateTime, $endDateTime, $startLocation, $endLocation, $passenger1, $passenger2, $db){
     		         if(empty($passenger2)){
     		             $sql = "Call add_ride('" . $startDateTime . "', '" . $endDateTime . "', " . $startLocation . ", " . $endLocation . ", " . $passenger1 . ", null)";
-    		             echo $sql;
     		             $result = mysqli_query($db->connection,$sql);
-    		             //echo "<script> window.location.href = 'http://localhost:8689/itcs-6160-final-project/actions.php'; </script>";
+    		             echo "<script> window.location.href = 'http://localhost:8689/itcs-6160-final-project/actions.php'; </script>";
     		         }else{
                         $sql = "Call add_ride('" . $startDateTime . "', '" . $endDateTime . "', " . $startLocation . ", " . $endLocation . ", " . $passenger1 . ", " . $passenger2 . ")";
-                        echo $sql;
                         $result = mysqli_query($db->connection,$sql);
-                        //echo "<script> window.location.href = 'http://localhost:8689/itcs-6160-final-project/actions.php'; </script>";
+                        echo "<script> window.location.href = 'http://localhost:8689/itcs-6160-final-project/actions.php'; </script>";
     		         }
                 }
                 
