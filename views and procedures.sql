@@ -109,4 +109,30 @@ BEGIN
 END //
 DELIMITER ;
 
+
+-- triggers
+
+-- update balance when a payment is added
+DELIMITER //
+CREATE TRIGGER update_balance
+AFTER INSERT on payments 
+FOR EACH ROW 
+BEGIN
+  UPDATE accounts
+    SET balance = round(balance - new.paymentAmount, 2)
+    WHERE accountID = new.accountID;
+END $$
+
+-- 
+DELIMITER //
+CREATE TRIGGER AFTER_golfcart_update
+AFTER INSERT ON payments
+FOR EACH ROW
+BEGIN
+    INSERT INTO payments
+    VALUES (NEW.paymentID, new.accountID, NOW(), new.paymentAmount);
+END$$
+DELIMITER //
+
+
 commit;
